@@ -62,6 +62,8 @@ group :development do
 end
 
 gem 'binding_of_caller'
+gem 'bootstrap-sass', github: 'twbs/bootstrap-sass'
+gem 'bootstrap-sass-extras'
 gem 'acts_as_votable', github: 'ryanto/acts_as_votable'
 gem 'devise', github: 'plataformatec/devise'
 gem 'omniauth'

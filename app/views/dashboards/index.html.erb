@@ -1,0 +1,168 @@
+<div style="margin:0;padding:0;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div style="text-align:center" class="sidebar col-xs-12 col-sm-4 col-md-3 col-lg-3">
+        <h1 style="margin-bottom:0px;" class="audicle_dashboard_heading">AUDICLE</h1>
+        <p class="tagline">Read To Others. Let Others Read To You</p>
+        <ul class="account_links well well-bg">
+            <% if current_user %>
+                <li><%= link_to "Starred", "#" %></li>
+                <li><%= link_to "Following", "#" %></li>
+                <li><%= link_to "Account", "#" %></li>
+                <li style="margin-right:0px"><%= link_to "Sign Out", destroy_user_session_path, method:"delete" %></li>
+            <% else %>
+                <li><%= link_to "Sign Up", "#" %></li>
+                <li><%= link_to "Sign In", "#" %></li>
+            <% end %>
+        </ul>
+
+        <ul class="nav_links">
+            <li class="well well-bg"><%= link_to "Readers", users_path %></li>
+            <li class="well well-bg"><%= link_to "Providers", providers_path %></li>
+            <li class="well well-bg"><%= link_to "Topics", topics_path %></li>
+        </ul>
+    </div>
+    <div style="top:40px" class="row-fluid col-xs-12 col-sm-6 col-md-7 col-lg-8">
+        <div id="columns">
+            <div class="pin">
+                <img src="http://cssdeck.com/uploads/media/items/2/2v3VhAp.png" />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Sed feugiat consectetur pellentesque. Nam ac elit risus,
+                    ac blandit dui. Duis rutrum porta tortor ut convallis.
+                    Duis rutrum porta tortor ut convallis.
+                </p>
+            </div>
+
+            <div class="pin">
+                <img src="http://cssdeck.com/uploads/media/items/1/1swi3Qy.png" />
+                <p>
+                    Donec a fermentum nisi.
+                </p>
+            </div>
+
+            <div class="pin">
+                <img src="http://cssdeck.com/uploads/media/items/6/6f3nXse.png" />
+                <p>
+                    Nullam eget lectus augue. Donec eu sem sit amet ligula
+                    faucibus suscipit. Suspendisse rutrum turpis quis nunc
+                    convallis quis aliquam mauris suscipit.
+                </p>
+            </div>
+
+            <div class="pin">
+                <img src="http://cssdeck.com/uploads/media/items/8/8kEc1hS.png" />
+                <p>
+                    Nullam eget lectus augue. Donec eu sem sit amet ligula
+                    faucibus suscipit. Suspendisse rutrum turpis quis nunc
+                    convallis quis aliquam mauris suscipit.
+                </p>
+            </div>
+
+            <div class="pin">
+                <img src="http://cssdeck.com/uploads/media/items/1/1swi3Qy.png" />
+                <p>
+                    Donec a fermentum nisi. Integer dolor est, commodo ut
+                    sagittis vitae, egestas at augue.
+                </p>
+            </div>
+
+            <div class="pin">
+                <img src="http://cssdeck.com/uploads/media/items/6/6f3nXse.png" />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Sed feugiat consectetur pellentesque. Nam ac elit risus,
+                    ac blandit dui. Duis rutrum porta tortor ut convallis.
+                    Duis rutrum porta tortor ut convallis.
+                </p>
+            </div>
+
+            <div class="pin">
+                <img src="http://cssdeck.com/uploads/media/items/2/2v3VhAp.png" />
+                <p>
+                    Nullam eget lectus augue. Donec eu sem sit amet ligula
+                    faucibus suscipit. Suspendisse rutrum turpis quis nunc
+                    convallis quis aliquam mauris suscipit.
+                    Duis rutrum porta tortor ut convallis.
+                </p>
+            </div>
+
+            <div class="pin">
+                <img src="http://cssdeck.com/uploads/media/items/1/1swi3Qy.png" />
+                <p>
+                    Nullam eget lectus augue.
+                </p>
+            </div>
+
+            <div class="pin">
+                <img src="http://cssdeck.com/uploads/media/items/8/8kEc1hS.png" />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Sed feugiat consectetur pellentesque.
+                </p>
+            </div>
+
+            <div class="pin">
+                <img src="http://cssdeck.com/uploads/media/items/2/2v3VhAp.png" />
+                <p>
+                    Donec a fermentum nisi. Integer dolor est, commodo ut
+                    sagittis vitae, egestas at augue. Suspendisse id nulla
+                    ac urna vestibulum mattis. Duis rutrum porta tortor ut convallis.
+                </p>
+            </div>
+
+            <div class="pin">
+                <img src="http://cssdeck.com/uploads/media/items/1/1swi3Qy.png" />
+                <p>
+                    Donec a fermentum nisi. Integer dolor est, commodo ut
+                    sagittis vitae, egestas at augue. Suspendisse id nulla
+                    ac urna vestibulum mattis.
+                </p>
+            </div>
+
+            <div class="pin">
+                <img src="http://cssdeck.com/uploads/media/items/6/6f3nXse.png" />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Sed feugiat consectetur pellentesque. Nam ac elit risus,
+                    ac blandit dui. Duis rutrum porta tortor ut convallis.
+                </p>
+            </div>
+
+            <div class="pin">
+                <img src="http://cssdeck.com/uploads/media/items/2/2v3VhAp.png" />
+                <p>
+                    Donec a fermentum nisi. Integer dolor est, commodo ut
+                    sagittis vitae, egestas at augue. Suspendisse id nulla
+                    ac urna vestibulum mattis.
+                </p>
+            </div>
+
+            <div class="pin">
+                <img src="http://cssdeck.com/uploads/media/items/1/1swi3Qy.png" />
+                <p>
+                    Donec a fermentum nisi. Integer dolor est, commodo ut
+                    sagittis vitae, egestas at augue. Suspendisse id nulla
+                    ac urna vestibulum mattis.
+                </p>
+            </div>
+
+            <div class="pin">
+                <img src="http://cssdeck.com/uploads/media/items/6/6f3nXse.png" />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Sed feugiat consectetur pellentesque. Nam ac elit risus,
+                    ac blandit dui. Duis rutrum porta tortor ut convallis.
+                </p>
+            </div>
+         </div>
+    </div>
+
+   <!--  <div class="row-fluid">
+        <div class="span6">1 half</div>
+        <div class="span6">2 half</div>
+    </div> -->
+</div>
+
+
+</div><%= link_to destroy_user_session_path, class: "text-right", method: :delete do %><i class="fa fa-sign-out"></i> Sign Out <% end %>
+
+

@@ -5,11 +5,24 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+
 <!-- Prelang: Analytics / Google Analytics -->
     <%= analytics_init if Rails.env.production? %></head>
 <body>
-
-<%= yield %>
-
+  <div id="page-container">
+<!--     <div class="container"> -->
+      <div id="flash">
+        <% flash.each do |name, msg| %>
+          <%= content_tag :div, msg, id: "flash_#{name}" %>
+        <% end %>
+      </div>
+      <!-- <#%= render partial: "elements/navbar" %> -->
+      <%= yield %>
+    <!-- </div> -->
+  </div>
 </body>
 </html>

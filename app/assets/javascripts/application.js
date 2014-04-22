@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(function(){
+   $('h6').on('click',function(){
+      $('.social').stop().slideToggle();
+   });
+});
