@@ -5,6 +5,7 @@ gem 'rails', '4.0.4'
 
 group :test, :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
 
 
@@ -73,3 +74,4 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'google-analytics-rails'
 gem 'validates_formatting_of'
+gem 'will_paginate'

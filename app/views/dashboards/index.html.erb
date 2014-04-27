@@ -1,25 +1,6 @@
-<div style="margin:0;padding:0;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <div style="text-align:center" class="sidebar col-xs-12 col-sm-4 col-md-3 col-lg-3">
-        <h1 style="margin-bottom:0px;" class="audicle_dashboard_heading">AUDICLE</h1>
-        <p class="tagline">Read To Others. Let Others Read To You</p>
-        <ul class="account_links well well-bg">
-            <% if current_user %>
-                <li><%= link_to "Starred", "#" %></li>
-                <li><%= link_to "Following", "#" %></li>
-                <li><%= link_to "Account", "#" %></li>
-                <li style="margin-right:0px"><%= link_to "Sign Out", destroy_user_session_path, method:"delete" %></li>
-            <% else %>
-                <li><%= link_to "Sign Up", "#" %></li>
-                <li><%= link_to "Sign In", "#" %></li>
-            <% end %>
-        </ul>
 
-        <ul class="nav_links">
-            <li class="well well-bg"><%= link_to "Readers", users_path %></li>
-            <li class="well well-bg"><%= link_to "Providers", providers_path %></li>
-            <li class="well well-bg"><%= link_to "Topics", topics_path %></li>
-        </ul>
-    </div>
+        <!-- <@%= render 'shared/user_info' %> -->
+    <%= render "layouts/sidebar" %>
     <div style="top:40px" class="row-fluid col-xs-12 col-sm-6 col-md-7 col-lg-8">
         <div id="columns">
             <div class="pin">
@@ -160,7 +141,7 @@
         <div class="span6">1 half</div>
         <div class="span6">2 half</div>
     </div> -->
-</div>
+    </div>
 
 
 </div>

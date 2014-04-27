@@ -1,0 +1,3 @@
+<% @recordings.each do |recording| %>
+  <%= link_to "#{recording.article.title}", recording_path(recording.id) %>
+<% end %>

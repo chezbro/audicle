@@ -1,0 +1,203 @@
+.current_well{
+  background-color:#F8F8FF;
+}
+
+a.users_text{
+  font-family: "Lato";
+  color: #000;
+}
+a.users_text:hover{
+  color: gray;
+}
+.stats {
+  overflow: auto;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid gray;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+.formy form{
+  width: 100px;
+  background: transparent;
+  box-shadow: none;
+  padding: 0px;
+  margin: 0px;
+}
+.formy form .btn{
+  padding: 0px;
+  margin: 0px;
+  background: transparent;
+  box-shadow: none;
+  color: black;
+}
+
+
+
+// // Copied from Dashboard.css.scss
+// ul.account_links{
+//   display: inline-table;
+//   top: 10%;
+//   position: relative;
+//   list-style-type: none;
+
+// }
+// ul.account_links li{
+
+//   margin-right: 20px;
+//   display: inline;
+// }
+// ul.account_links a{
+//   font-size: 1.2em;
+//   font-family: "Lato";
+//   font-weight: 300;
+//   color: #292928;
+//   -webkit-font-smoothing: antialiased;
+// }
+
+// ul.account_links a:hover{
+//   color: #292928;
+//   -webkit-font-smoothing: antialiased;
+//   text-decoration: underline;
+//   transition: 0.7s ease;
+// }
+
+// ul.nav_links{
+//   text-align: center;
+//   top: 30%;
+//   position: relative;
+//   list-style-type: none;
+//   top: 200px;
+// }
+// ul.nav_links li{
+//   margin-bottom: 7px;
+// }
+// ul.nav_links li a{
+//   font-size: 2.1em;
+//   font-family: "Lato";
+//   font-weight: 300;
+//   color: #292928;
+//   margin-bottom: 10px;
+//   -webkit-font-smoothing: antialiased;
+//   text-decoration: none;
+//   transition: 0.7s ease;
+//   white-space: nowrap;
+//   width: 0px;
+//   border-bottom: 2px solid transparent;
+// }
+// ul.nav_links a:hover{
+//   // color: #292928;
+//   // -webkit-font-smoothing: antialiased;
+//   // border-bottom:2px solid #292928;
+// }
+
+// h1.audicle_dashboard_heading{
+//   font-size: 2.1em;
+//   font-family: 'Droid Serif', serif;
+//   font-weight: 300;
+//   color: #292928;
+//    -webkit-font-smoothing: antialiased;
+
+// }
+
+// .well-bg{
+//   background-color: #FAFAFA;
+// }
+// .well-bg1{
+//   background-color: #FAFAFA;
+// }
+// .well-bg1:hover{
+//   transition: background-color 0.7s ease;
+//   background-color: #ECE5CE;
+// }
+
+// p.tagline{
+//   font-style: italic;
+//   font-size:1em;
+//   font-family:"Lato";
+//   margin-bottom: 30px;
+//    -webkit-font-smoothing: antialiased;
+// }
+// .sign_in_sign_up a{
+// color:#292928;
+// text-align:center;
+// font-family:'Lato';
+
+// }
+
+// #columns {
+//   -webkit-column-count: 3;
+//   -webkit-column-gap: 10px;
+//   -webkit-column-fill: auto;
+//   -moz-column-count: 3;
+//   -moz-column-gap: 10px;
+//   -moz-column-fill: auto;
+//   column-count: 3;
+//   column-gap: 15px;
+//   column-fill: auto;
+// }
+
+// .pin {
+//   display: inline-block;
+//   background: #FEFEFE;
+//   border: 2px solid #FAFAFA;
+//   box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+//   margin: 0 2px 15px;
+//   -webkit-column-break-inside: avoid;
+//   -moz-column-break-inside: avoid;
+//   column-break-inside: avoid;
+//   padding: 15px;
+//   padding-bottom: 5px;
+//   background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
+//   opacity: 1;
+
+//   -webkit-transition: all .2s ease;
+//   -moz-transition: all .2s ease;
+//   -o-transition: all .2s ease;
+//   transition: all .2s ease;
+// }
+
+// .pin img {
+//   width: 100%;
+//   border-bottom: 1px solid #ccc;
+//   padding-bottom: 15px;
+//   margin-bottom: 5px;
+// }
+
+// .pin p {
+//   font: 12px/18px Arial, sans-serif;
+//   color: #333;
+//   margin: 0;
+// }
+
+// @media (min-width: 960px) {
+//   #columns {
+//     -webkit-column-count: 4;
+//     -moz-column-count: 4;
+//     column-count: 4;
+//   }
+// }
+
+// @media (min-width: 1100px) {
+//   #columns {
+//     -webkit-column-count: 5;
+//     -moz-column-count: 5;
+//     column-count: 5;
+//   }
+// }
+
+// #columns:hover .pin:not(:hover) {
+//   opacity: 0.4;
+// }

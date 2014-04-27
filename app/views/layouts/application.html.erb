@@ -4,6 +4,7 @@
   <title>Audicle</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= favicon_link_tag 'favicon1.ico' %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,300' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
@@ -14,7 +15,7 @@
     <%= analytics_init if Rails.env.production? %></head>
 <body>
   <div id="page-container">
-<!--     <div class="container"> -->
+    <% if current_page?(:unauthenticated_root) || current_page?(new_user_registration_path) || current_page?(new_user_session_path) %>
       <div id="flash">
         <% flash.each do |name, msg| %>
           <%= content_tag :div, msg, id: "flash_#{name}" %>
@@ -22,7 +23,20 @@
       </div>
       <!-- <#%= render partial: "elements/navbar" %> -->
       <%= yield %>
-    <!-- </div> -->
+    <% else %>
+      <%= render "layouts/sidebar" %>
+        <div id="flash">
+          <% flash.each do |name, msg| %>
+            <%= content_tag :div, msg, id: "flash_#{name}" %>
+          <% end %>
+        </div>
+        <!-- <#%= render partial: "elements/navbar" %> -->
+        <%= yield %>
+      </div>
+    </div>
+    <!-- above div closed sidebar -->
+    <% end %>
   </div>
-</body>
-</html>
+      <!-- above div closed page-container -->
+  </body>
+  </html>

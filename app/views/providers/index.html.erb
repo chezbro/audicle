@@ -1,4 +1,11 @@
-<% @providers.each do |provider| %>
-  <%= image_tag "#{provider.image_url}" %><br>
-  <%= provider.name %>
-<% end %>
+<div style="top:40px" class="row-fluid col-xs-12 col-sm-6 col-md-7 col-lg-8">
+  <div id="columns">
+    <% @providers.each do |provider| %>
+      <div class="pin">
+        <%= link_to image_tag("#{provider.image_url}"), provider_path(provider.id) %><br>
+      <p style="font-size:12px;text-align:center"><%= provider.name %></p><br>
+      <p style="font-size:10px;text-align:center">17 Audicles | 120 Followers </p>
+      </div>
+    <% end %>
+  </div>
+</div>
