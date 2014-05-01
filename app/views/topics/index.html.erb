@@ -1,20 +1,8 @@
-<ul>
-  <li><%= link_to "Business", "#" %></li>
-  <li><%= link_to "Entertainment", "#" %></li>
-  <li><%= link_to "Lifestyle", "#" %></li>
-  <li><%= link_to "News", "#" %></li>
-  <li><%= link_to "Sports", "#" %></li>
-  <li><%= link_to "Technology", "#" %></li>
-  <li><%= link_to "World", "#" %></li>
-</ul>
-
-<div style="top:40px" class="row-fluid col-xs-12 col-sm-6 col-md-7 col-lg-8">
+<div style="top:40px;float:right" class="row-fluid col-xs-12 col-sm-8 col-md-10 col-lg-10">
   <div id="columns">
-    <% @providers.each do |provider| %>
+    <% @topics.each do |topic| %>
       <div class="pin">
-        <%= link_to image_tag("#{provider.image_url}"), provider_path(provider.id) %><br>
-      <p style="font-size:12px;text-align:center"><%= provider.name %></p><br>
-      <p style="font-size:10px;text-align:center">17 Audicles | 120 Followers </p>
+
       </div>
     <% end %>
   </div>

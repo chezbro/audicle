@@ -8,6 +8,11 @@ Bundler.require(*Rails.groups)
 
 module Audicle
   class Application < Rails::Application
+    AWS::S3::Base.establish_connection!(
+    :access_key_id     => ENV['AUDICLE_KEY'],
+    :secret_access_key => ENV['AUDICLE_SECRET']
+    )
+    BUCKET="audicle"
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

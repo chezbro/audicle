@@ -1,37 +1,38 @@
 .sidebar {
-  width:400px;
+  // width:400px;
   float:left;
   min-height:100vh;
-  background:#F8F8FF;
+  background:#0e1214;
   border-right: 1px solid #F5F5F5;
 
 }
 
 ul.account_links{
   display: inline-table;
-  top: 10%;
+  margin-top: 10px;
   position: relative;
   list-style-type: none;
+  font-size: 15px;
 
 }
 ul.account_links li{
 
-  margin-right: 20px;
+  margin-right: 13px;
   display: inline;
 }
 ul.account_links a{
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-family: "Lato";
   font-weight: 300;
-  color: #292928;
+  color: #f5f5f5;
   -webkit-font-smoothing: antialiased;
 }
 
 ul.account_links a:hover{
-  color: #292928;
+  color: #428bca;
   -webkit-font-smoothing: antialiased;
-  text-decoration: underline;
-  transition: 0.7s ease;
+  // text-decoration: underline;
+  transition: 0.4s ease;
 }
 
 ul.nav_links{
@@ -40,16 +41,16 @@ ul.nav_links{
   position: relative;
   list-style-type: none;
   top: 200px;
+  width: 100%;
 }
 ul.nav_links li{
   margin-bottom: 7px;
 }
 ul.nav_links li a{
   font-size: 1.9em;
-
   font-family: "Lato";
   font-weight: 300;
-  color: #292928;
+  color: #fafafa;
   margin-bottom: 10px;
   -webkit-font-smoothing: antialiased;
   text-decoration: none;
@@ -58,39 +59,65 @@ ul.nav_links li a{
   width: 0px;
   border-bottom: 2px solid transparent;
 }
-ul.nav_links a:hover{
-  // color: #292928;
-  // -webkit-font-smoothing: antialiased;
-  // border-bottom:2px solid #292928;
+
+
+ul.nav_links li:hover{
+  background-color: #428bca;
+}
+ul.bottom_nav{
+  text-align: center;
+  top: 90%;
+  position: absolute;
+  list-style-type: none;
+  width: 100%;
+}
+ul.bottom_nav li {
+
+}
+ul.bottom_nav li a{
+  font-size: 1.4em;
+  font-family: "Lato";
+  font-weight: 300;
+  color: #fafafa;
+  margin-bottom: 10px;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  transition: 0.7s ease;
+  white-space: nowrap;
+  width: 0px;
+  border-bottom: 2px solid transparent;
 }
 
+ul.bottom_nav li:hover{
+  background-color: #428bca;
+}
 h1.audicle_dashboard_heading{
   font-size: 1.9em;
-  font-family: 'Droid Serif', serif;
+  font-family: 'Brandon Grotesque', serif;
   font-weight: 300;
-  color: #292928;
+  color: #fafafa;
    -webkit-font-smoothing: antialiased;
-
 }
 
-.well-bg{
-  background-color: #FAFAFA;
-}
-.well-bg1{
-  background-color: #FAFAFA;
-}
-.well-bg1:hover   {
-  transition: background-color 0.5s ease;
-  background-color: #F8F8FF;
-  font-weight: 400;
-}
+// .well-bg{
+//   background-color: #FAFAFA;
+// }
+// .well-bg1{
+//   background-color: #FAFAFA;
+// }
+// .well-bg1:hover   {
+//   transition: background-color 0.5s ease;
+//   background-color: #F8F8FF;
+//   font-weight: 400;
+// }
 
 p.tagline{
   font-style: italic;
   font-size:1em;
   font-family:"Lato";
-  margin-bottom: 30px;
+  margin-bottom: 1em;
    -webkit-font-smoothing: antialiased;
+  color: #fafafa
 }
 .sign_in_sign_up a{
 color:#292928;
@@ -113,7 +140,7 @@ font-family:'Lato';
 
 .pin {
   // display: inline-block;
-  max-height: 420px;
+  // min-height: 420px;
   max-width: 290px;
   background: #FEFEFE;
   border: 2px solid #FAFAFA;

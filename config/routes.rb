@@ -15,7 +15,9 @@ Audicle::Application.routes.draw do
   end
   # root 'dashboards#index'
   resources :articles
-  resources :recordings
+  resources :recordings, :path => 'audicles'
+  post "recordings/upload", :as => 'upload'
+  get "recordings/delete", :as => 'delete'
   resources :topics
   resources :providers
   resources :audios

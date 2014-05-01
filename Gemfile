@@ -45,7 +45,7 @@ end
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
 gem 'bundler'
 
 group :development, :test do
@@ -75,3 +75,4 @@ gem 'omniauth-facebook'
 gem 'google-analytics-rails'
 gem 'validates_formatting_of'
 gem 'will_paginate'
+gem 'aws-s3', :require => 'aws/s3'

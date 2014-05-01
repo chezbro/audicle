@@ -1,3 +1,22 @@
-<% @recordings.each do |recording| %>
-  <%= link_to "#{recording.article.title}", recording_path(recording.id) %>
+<!-- <@% @recordings.each do |recording| %>
+  <@%= link_to "#{recording.article.title}", recording_path(recording.id) %>
+<@% end %> -->
+
+<h2>Listen to a MP3 with HTML5 Audio</h2>
+<section id="audio">
+</section>
+<h2>Upload a new Audicle</h2>
+<%= form_tag upload_path, :method => "post", :multipart => true do %>
+    <%= file_field_tag "mp3file" %>
+    <%= submit_tag "Upload" %>
 <% end %>
+<h2>Download and Delete Existing Audicle's</h2>
+<table>
+<% @amazon_recordings.each do |recording| %>
+    <tr>
+        <td><%= recording.key %></td>
+        <td><%= link_to "HTML5 Audio", download_url_for(recording.key), :class => "html5" %></td>
+        <td><%= link_to "Delete",  "recordings/delete/?recording=" + recording.key, data: {confirm: 'Are you sure you want to delete ' + recording.key + '?'} %></td>
+    </tr>
+<% end %>
+</table>

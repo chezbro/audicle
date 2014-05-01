@@ -30,3 +30,10 @@ body, html {
    background: cover;
    background-size: 100% 100%;
 }
+input.sign_up_submit:hover{
+  background-color:#428bca;
+}
+
+img.small_logo_image:hover{
+  background: url("small_logo_hover.png");
+}

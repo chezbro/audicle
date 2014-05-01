@@ -3,3 +3,21 @@
     <li><%= @recording_article.author %></li>
     <li><%= @recording_article.provider.name %></li>
 </ul>
+<h2>Listen to an Audicle</h2>
+<section id="audio">
+</section>
+<h2>Upload a new Audicle</h2>
+<%= form_tag upload_path, :method => "post", :multipart => true do %>
+    <%= file_field_tag "mp3file" %>
+    <%= submit_tag "Upload" %>
+<% end %>
+<h2>Download and Delete Existing Audicle's</h2>
+<table>
+<% @amazon_recordings.each do |recording| %>
+    <tr>
+        <td><%= recording.key %></td>
+        <td><%= link_to "HTML5 Audio", download_url_for(recording.key), :class => "html5" %></td>
+        <td><%= link_to "Delete",  "recordings/delete/?recording=" + recording.key, data: {confirm: 'Are you sure you want to delete ' + recording.key + '?'} %></td>
+    </tr>
+<% end %>
+</table>
