@@ -4,6 +4,7 @@ class ProvidersController < ApplicationController
   end
   def show
     @provider = Provider.find(params[:id])
+    @provider_recordings = @provider.recordings
   end
 
   private

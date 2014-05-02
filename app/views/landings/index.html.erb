@@ -1,13 +1,14 @@
-<div id="bg">
-  <%= image_tag "book2.gif" %>
-</div>
-  <h1 class="audicle_heading">AUDICLE</h1>
+  <div id="bg">
+    <%= image_tag "book2.gif" %>
+  </div>
   <div style="position:relative;top:350px;" class="col-md-12 col lg-12">
-    <h1 style="font-weight:300" class="homepage_heading_h1">Listen to Audio Articles</h1>
-    <div style="text-align:center; margin:30px 0 0 100px;">
-      <%= link_to "Sign Up or Sign In", new_user_registration_path, style:"margin:0 auto;font-family:'Raleway'", class:"push_button blue" %></h3>
-<!--     <h3>Or</h3><br>
-    <h1><#%= link_to "Sign In", new_user_session_path %></h1> -->
+  <%= image_tag "small_logo.png", style:"display:inherit;margin:0 auto;" %>
+    <h1 style="margin-top:5px;" class="homepage_heading_h1">Read to Others. Let Others Read to You.</h1>
+    <div class="sign_up_buttons">
+      <%= link_to "Sign Up", new_user_registration_path, class:"sign_up_in_link"%>
+    </div>
+     <div class="sign_up_buttons">
+      <%= link_to "Sign In", new_user_session_path, class:"sign_up_in_link"%>
     </div>
   </div>
 

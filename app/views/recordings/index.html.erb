@@ -1,7 +1,8 @@
-<!-- <@% @recordings.each do |recording| %>
-  <@%= link_to "#{recording.article.title}", recording_path(recording.id) %>
-<@% end %> -->
 
+<div style="float:right;" class="row-fluid col-xs-12 col-sm-8 col-md-10 col-lg-10">
+<% @recordings.each do |recording| %>
+  <%= recording.provider.inspect  %>
+<% end %>
 <h2>Listen to a MP3 with HTML5 Audio</h2>
 <section id="audio">
 </section>
@@ -20,3 +21,5 @@
     </tr>
 <% end %>
 </table>
+
+</div>

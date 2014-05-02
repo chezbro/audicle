@@ -6,7 +6,7 @@
 #bg {
   position: fixed;
   top: -50%;
-  left: -50%;
+  left: -54%;
   width: 200%;
   height: 200%;
 }
@@ -39,20 +39,17 @@
   top: 370px;
   position: relative;
   font-size: 80px;
-  font-family: 'Raleway';
+  font-family: 'Lato';
   font-weight: 300;
-  margin-left: 75px;
+
 }
-
-
 .homepage_heading_h1{
   text-align:center;
   font-family: 'Raleway', sans-serif;
-  font-weight:400;
+  font-weight:300;
   position:relative;
   color: #fff;
-  font-size: 45px;
-  padding-left: 75px;
+  font-size: 2.3em;
 }
 .homepage_heading_h3{
   text-align: center;
@@ -60,77 +57,32 @@
   font-weight:300;
   position:relative;
   font-size: 30px;
-  padding-left: 75px;
 }
 .homepage_heading_h3 a{
   color: #fff;
 }
 
-.push_button {
-  position: relative;
-  width:220px;
-  height:40px;
-  text-align:center;
-  color:#FFF;
-  text-decoration:none;
-  line-height:43px;
-  font-family:'Oswald', Helvetica;
-  display: block;
-  margin: 30px;
+div.sign_up_buttons{
+  text-align: center;
+  width: 230px;
+  height: 50px;
+  margin: 0 auto;
+  border: 1px solid white;
+  margin-bottom: 20px;
 }
-.push_button:before {
-  background:#f0f0f0;
-  background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#D0D0D0), to(#f0f0f0));
-
-  -webkit-border-radius:5px;
-  -moz-border-radius:5px;
-  border-radius:5px;
-
-  -webkit-box-shadow:0 1px 2px rgba(0, 0, 0, .5) inset, 0 1px 0 #FFF;
-  -moz-box-shadow:0 1px 2px rgba(0, 0, 0, .5) inset, 0 1px 0 #FFF;
-  box-shadow:0 1px 2px rgba(0, 0, 0, .5) inset, 0 1px 0 #FFF;
-
-  position: absolute;
-  content: "";
-  left: -6px; right: -6px;
-  top: -6px; bottom: -10px;
-  z-index: -1;
+div.sign_up_buttons:hover{
+  background-color: #428bca;
 }
 
-.push_button:active {
-  -webkit-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset;
-  top:5px;
-}
-.push_button:active:before{
-  top: -11px;
-  bottom: -5px;
-  content: "";
-}
 
-.blue {
-  text-shadow:-1px -1px 0 #2C7982;
-  background: #3EACBA;
-  border:1px solid #379AA4;
-  background-image:-webkit-linear-gradient(top, #48C6D4, #3EACBA);
-  background-image:-moz-linear-gradient(top, #48C6D4, #3EACBA);
-  background-image:-ms-linear-gradient(top, #48C6D4, #3EACBA);
-  background-image:-o-linear-gradient(top, #48C6D4, #3EACBA);
-  background-image:linear-gradient(top, #48C6D4, #3EACBA);
+a.sign_up_in_link {
+  color: #fafafa;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-weight:200;
+  font-size: 2.1em;
+  line-height: 50px;
+  padding: 0 60px;
 
-  -webkit-border-radius:5px;
-  -moz-border-radius:5px;
-  border-radius:5px;
-
-  -webkit-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #338A94, 0 4px 2px rgba(0, 0, 0, .5);
-  -moz-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #338A94, 0 4px 2px rgba(0, 0, 0, .5);
-  box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #338A94, 0 4px 2px rgba(0, 0, 0, .5);
 }
 
-.blue:hover {
-  background: #48C6D4;
-  background-image:-webkit-linear-gradient(top, #3EACBA, #48C6D4);
-  background-image:-moz-linear-gradient(top, #3EACBA, #48C6D4);
-  background-image:-ms-linear-gradient(top, #3EACBA, #48C6D4);
-  background-image:-o-linear-gradient(top, #3EACBA, #48C6D4);
-  background-image:linear-gradient(top, #3EACBA, #48C6D4);
-}

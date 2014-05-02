@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140427182531) do
+ActiveRecord::Schema.define(version: 20140501221506) do
 
   create_table "articles", force: true do |t|
     t.text     "content"
@@ -65,13 +65,7 @@ ActiveRecord::Schema.define(version: 20140427182531) do
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
 
   create_table "topics", force: true do |t|
-    t.boolean "business",      default: false
-    t.boolean "entertainment", default: false
-    t.boolean "news",          default: false
-    t.boolean "lifestyle",     default: false
-    t.boolean "sports",        default: false
-    t.boolean "technology",    default: false
-    t.boolean "world",         default: false
+    t.string "name"
   end
 
   create_table "users", force: true do |t|
