@@ -1,1 +1,17 @@
-<%= @provider.name %>
+<div style="float:right;top:40px;text-align:center;" class="row-fluid col-xs-12 col-sm-8 col-md-10 col-lg-10">
+  <h1 class="show_provider_headline"><%= @provider.name %></h1>
+  <h1 class="round-button">+</h1>
+  <p class="count_and_followers"><%= @provider.recordings.count %> Audicles | 1118 Listeners </p>
+  <hr>
+  <div id="columns">
+    <% @provider.recordings.each do |provider_recording| %>
+      <div class="pin provider_show_pin">
+      <p style="font-size:12px;text-align:center"><%= link_to "#{provider_recording.title}", recording_path(provider_recording.id) %></p>
+        <%= link_to image_tag("#{provider_recording.image}"), "#" %><br>
+      <p style="font-size:10px;display:inline-block;"><%= provider_recording.author %></p><br>
+      <p style="font-size:10px;display:inline-block;"><%= link_to "Save +", "#" %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+

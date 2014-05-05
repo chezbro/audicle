@@ -1,0 +1,51 @@
+ul.topic_list{
+  list-style-type: none;
+  text-align: center;
+}
+ul.topic_list li{
+  line-height: 150px;
+}
+ul.topic_list li a{
+  font-family: "Lato";
+  font-size: 2em;
+  color: #333332;
+  font-weight: 300;
+
+}
+ul.topic_list li a:hover{
+  color: #5C5C59;
+}
+ul.topic_list p {
+  color: #333332;
+  font-size: 0.9em;
+  font-family: 'Lato';
+}
+div.topic_pin{
+  margin: 0px;
+}
+div.topic_pin:hover{
+  background: #fafafa;
+}
+div.topic_show_pin{
+  border:none;
+}
+h1.show_topic_headline{
+  font-size: 3.3em;
+  font-family: 'Lato';
+  color: #333332;
+  font-weight: 400;
+  margin-bottom: 5px
+}
+p.topic_count_and_followers{
+  font-family: 'Lato';
+  font-size: 1.3em;
+  color: #333332;
+  font-weight: 300;
+  display: inline-block;
+}
+p.topic_count_and_followers a{
+  font-family: 'Lato';
+  font-size: 1.3em;
+  color: #333332;
+  font-weight: 300;
+}
