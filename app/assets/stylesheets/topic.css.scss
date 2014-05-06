@@ -22,6 +22,7 @@ ul.topic_list p {
 }
 div.topic_pin{
   margin: 0px;
+  padding:0px;
 }
 div.topic_pin:hover{
   background: #fafafa;
@@ -45,7 +46,7 @@ p.topic_count_and_followers{
 }
 p.topic_count_and_followers a{
   font-family: 'Lato';
-  font-size: 1.3em;
+  // font-size: 1.3em;
   color: #333332;
   font-weight: 300;
 }

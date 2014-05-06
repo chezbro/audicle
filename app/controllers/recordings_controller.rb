@@ -31,8 +31,11 @@ class RecordingsController < ApplicationController
     @users = User.all
     @recordings = Recording.all
     @recording = Recording.find(params[:id])
+    @same_recording_url = Recording.where(url:@recording.url).first
+    @same_recording_users = Recording.where(url:@recording.url)
     # @recording_article = @recording.article
-    @amazon_recordings = AWS::S3::Bucket.find('audicle')[@recording.title + '.mp3']
+    @amazon_recording = AWS::S3::Bucket.find('audicle')[@recording.title + '.mp3']
+
 
   end
   # def upload

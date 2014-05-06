@@ -44,6 +44,23 @@ a.users_text:hover{
   color: black;
 }
 
+div.user_pin:hover{
+  background: #fafafa;
+}
+
+div.user_show_pin{
+  border:none;
+  max-height: 310px;
+  margin-bottom: 0px;
+}
+h1.show_user_headline{
+  font-size: 3.3em;
+  font-family: 'Lato';
+  color: #333332;
+  font-weight: 400;
+  margin-bottom: 5px
+}
+
 
 
 // // Copied from Dashboard.css.scss

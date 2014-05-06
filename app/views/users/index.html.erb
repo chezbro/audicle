@@ -1,4 +1,3 @@
-    <%= render "users/stats" %>
     <div style="float:right;" class="row-fluid col-xs-12 col-sm-8 col-md-10 col-lg-10">
         <div id="columns">
             <% @users.each do |user|  %>
@@ -9,12 +8,17 @@
                     <% else %>
                         <%= link_to image_tag("https://s3.amazonaws.com/uifaces/faces/twitter/_everaldo/128.jpg") %>
                     <% end %>
-                    <p style="font-size:10px;text-align:center">17 Audicles | 9 Thanks </p><br>
+                    <p style="font-size:10px;text-align:center"><%= user.recordings.count %> Audicles | <%= user.followers.count %> Listeners </p><br>
                     <div id="follow_form">
-                        <% if current_user.following?(@user) %>
-                            <%= render 'unfollow' %>
+                        <% if current_user.following?(user) %>
+                          <%= form_for(current_user.relationships.find_by(followed_id: user.id), html: { method: :delete }, remote: true) do |f| %>
+                            <%= f.submit "Unfollow", style:"width:120px;", class: "btn btn-default" %>
+                          <% end %>
                         <% else %>
-                            <%= render 'follow' %>
+                            <%= form_for(current_user.relationships.build(followed_id: user.id), remote: true) do |f| %>
+                              <%= f.hidden_field :followed_id %>
+                              <%= f.submit "Follow", style:"width:120px;", class: "btn btn-default btn-primary" %>
+                            <% end %>
                         <% end %>
                     </div>
                     <p style="text-align:center"></p>

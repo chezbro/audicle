@@ -8,7 +8,7 @@
                     <i class="fa fa-star"></i>
                     <% end %>
                   </li>
-                  <li><%= link_to "#" do%>
+                  <li><%= link_to users_path do%>
                     <i class="fa fa-users"></i>
                     <% end %>
                   </li>
@@ -22,15 +22,25 @@
               <% end %>
           </ul>
           <ul class="nav_links">
-              <li><%= link_to "Readers", users_path, class:"user_nav_link" %></li>
-              <li><%= link_to "Providers", providers_path, class:"provider_nav_link" %></li>
-              <li><%= link_to "Categories", topics_path, class:"topics_nav_link" %></li>
+            <% if current_page?(:authenticated_root) %>
+              <li class="feed_nav_link"><%= link_to "Audicles", :authenticated_root %></li>
+              <li><%= link_to "Providers", providers_path %></li>
+              <li><%= link_to "Categories", topics_path %></li>
+            <% elsif current_page?(providers_path) %>
+              <li><%= link_to "Audicles", :authenticated_root %></li>
+              <li class="provider_nav_link"><%= link_to "Providers", providers_path %></li>
+              <li><%= link_to "Categories", topics_path %></li>
+            <% elsif current_page?(topics_path) %>
+              <li><%= link_to "Audicles", :authenticated_root %></li>
+              <li><%= link_to "Providers", providers_path %></li>
+              <li class="topics_nav_link"><%= link_to "Categories", topics_path %></li>
+            <% end %>
           </ul>
           <ul class="bottom_nav">
             <% if current_user %>
-              <li><%= link_to "Sign Out", destroy_user_session_path, method:"delete" %></li>
               <li><%= link_to "Everywhere", providers_path %></li>
               <li><%= link_to "About", topics_path %></li>
+              <li><%= link_to "Sign Out", destroy_user_session_path, method:"delete" %></li>
           </ul>
           <% end %>
         </div>

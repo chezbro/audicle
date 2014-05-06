@@ -1,19 +1,45 @@
-<% provide(:title, @user.email) %>
+<div style="float:right;top:40px;text-align:center;" class="row-fluid col-xs-12 col-sm-8 col-md-10 col-lg-10">
+  <h1 class="show_user_headline"><%= @user.name %></h1>
+  <h1 class="round-button">+</h1>
+  <p class="count_and_followers"><%= @user.recordings.count %> Audicles | <%= @user.followers.count %> Listeners </p>
+  <hr>
+  <div id="columns">
+    <% @user.recordings.each do |user_recordings| %>
+      <div class="pin user_show_pin">
+      <p style="font-size:12px;text-align:center"><%= link_to "#{user_recordings.title}", recording_path(user_recordings.id) %></p>
+        <%= link_to image_tag("#{user_recordings.image}"), "#" %><br>
+      <p style="font-size:10px;display:inline-block;"><%= user_recordings.author %></p><br>
+      <p style="font-size:10px;display:inline-block;"><%= link_to "Save +", "#" %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- Stats -->
+<!-- <#% provide(:title, @user.email) %>
 <div class="row">
   <aside class="span4">
     <section>
       <h1>
-        <%= @user.email %>
+        <#%= @user.email %>
       </h1>
       <div>
-        <%= image_tag "#{@user.image_url}" %>
+        <#%= image_tag "#{@user.image_url}" %>
       </div>
     </section>
     <section>
-      <%= render 'users/stats' %>
+      <#%= render 'users/stats' %>
     </section>
   </aside>
   <div class="span8">
-    <%= render 'users/follow_form' %>
+    <#%= render 'users/follow_form' %>
   </div>
 </div>
+ -->
