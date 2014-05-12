@@ -20,3 +20,28 @@ h1.show_provider_headline{
   color: #333332;
   font-weight: 300;
 }
+div#follow_provider form.button_to{
+  box-shadow: none;
+  padding: 0px;
+  margin: 20px auto;
+}
+.round-button-provider-follow{
+  display: block;
+  width: 140px;
+  height: 20px;
+  line-height: 0px;
+  border: 2px solid #f5f5f5;
+  border-radius: 0%;
+  color: #f5f5f5;
+  text-align: center;
+  text-decoration: none;
+  background: #a8a8a8;
+  box-shadow: 0 0 3px gray;
+  font-size: 20px;
+  font-weight: 200;
+  display: inline-block;
+}
+
+.round-button-provider-follow:hover{
+  background: #d3d3d3;
+}

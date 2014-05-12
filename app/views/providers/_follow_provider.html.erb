@@ -1,0 +1,7 @@
+<% if current_user.following?(provider) %>
+    <%= button_to("Unfollow", provider_follow_path(provider.to_param, current_user.get_follow(provider).id),
+    :method => :delete, :remote => true, :class => 'round-button') %>
+<% else %>
+    <%= button_to("Follow", provider_follows_path(provider.to_param), :remote => true, :class => 'round-button-provider-follow') %>
+<% end %>
+

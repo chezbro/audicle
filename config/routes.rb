@@ -16,17 +16,20 @@ Audicle::Application.routes.draw do
   # root 'dashboards#index'
   resources :articles
   resources :recordings
-  # , :path => 'audicles'
   post "recordings/upload", :as => 'upload'
   # get "recordings/delete", :as => 'delete'
 
-  resources :topics
-  resources :providers
-  resources :audios
-  resources :users do
-    member do
-      get :following, :followers
+  resources :topics do
+      resources :follows,  controller: "follows_topics", :only => [:create, :destroy]
+      resources :follows,  controller: "follows_topics", :only => [:create, :destroy]
     end
+  resources :providers do
+      resources :follows,  controller: "follows_providers", :only => [:create, :destroy]
+      resources :follows,  controller: "follows_providers", :only => [:create, :destroy]
+  end
+  # resources :audios
+  resources :users do
+    resources :follows, :only => [:create, :destroy]
   end
   resources :relationships, only: [:create, :destroy]
 

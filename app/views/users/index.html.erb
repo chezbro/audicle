@@ -9,18 +9,11 @@
                         <%= link_to image_tag("https://s3.amazonaws.com/uifaces/faces/twitter/_everaldo/128.jpg") %>
                     <% end %>
                     <p style="font-size:10px;text-align:center"><%= user.recordings.count %> Audicles | <%= user.followers.count %> Listeners </p><br>
-                    <div id="follow_form">
-                        <% if current_user.following?(user) %>
-                          <%= form_for(current_user.relationships.find_by(followed_id: user.id), html: { method: :delete }, remote: true) do |f| %>
-                            <%= f.submit "Unfollow", style:"width:120px;", class: "btn btn-default" %>
-                          <% end %>
-                        <% else %>
-                            <%= form_for(current_user.relationships.build(followed_id: user.id), remote: true) do |f| %>
-                              <%= f.hidden_field :followed_id %>
-                              <%= f.submit "Follow", style:"width:120px;", class: "btn btn-default btn-primary" %>
-                            <% end %>
-                        <% end %>
-                    </div>
+                    <% if user_signed_in? && current_user!=user %>
+                      <div id="follow_user">
+                        <%= render :partial => "follow_user", :locals => {:user => user} %>
+                      </div>
+                    <% end %>
                     <p style="text-align:center"></p>
                 </div>
             <% end %>
@@ -31,3 +24,15 @@
         <div class="span6">1 half</div>
         <div class="span6">2 half</div>
     </div> -->
+<!--                     <div id="follow_form">
+                        <#% if current_user.following?(user) %>
+                          <#%= form_for(current_user.relationships.find_by(followed_id: user.id), html: { method: :delete }, remote: true) do |f| %>
+                            <#%= f.submit "Unfollow", style:"width:120px;", class: "btn btn-default" %>
+                          <#% end %>
+                        <#% else %>
+                            <#%= form_for(current_user.relationships.build(followed_id: user.id), remote: true) do |f| %>
+                              <#%= f.hidden_field :followed_id %>
+                              <#%= f.submit "Follow", style:"width:120px;", class: "btn btn-default btn-primary" %>
+                            <#% end %>
+                        <#% end %>
+                    </div> -->

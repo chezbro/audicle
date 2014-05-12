@@ -22,19 +22,9 @@
               <% end %>
           </ul>
           <ul class="nav_links">
-            <% if current_page?(:authenticated_root) %>
-              <li class="feed_nav_link"><%= link_to "Audicles", :authenticated_root %></li>
-              <li><%= link_to "Providers", providers_path %></li>
-              <li><%= link_to "Categories", topics_path %></li>
-            <% elsif current_page?(providers_path) %>
-              <li><%= link_to "Audicles", :authenticated_root %></li>
-              <li class="provider_nav_link"><%= link_to "Providers", providers_path %></li>
-              <li><%= link_to "Categories", topics_path %></li>
-            <% elsif current_page?(topics_path) %>
-              <li><%= link_to "Audicles", :authenticated_root %></li>
-              <li><%= link_to "Providers", providers_path %></li>
-              <li class="topics_nav_link"><%= link_to "Categories", topics_path %></li>
-            <% end %>
+              <li><%= link_to "Audicles", :authenticated_root, class:"user_nav_link" %></li>
+              <li><%= link_to "Providers", providers_path, class:"provider_nav_link" %></li>
+              <li><%= link_to "Categories", topics_path, class:"topics_nav_link" %></li>
           </ul>
           <ul class="bottom_nav">
             <% if current_user %>

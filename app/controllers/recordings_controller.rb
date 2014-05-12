@@ -3,6 +3,7 @@ class RecordingsController < ApplicationController
   before_filter :get_all_topics
   before_filter :get_all_providers
 
+
   def new
     @recording = Recording.new
   end
@@ -13,13 +14,24 @@ class RecordingsController < ApplicationController
     url = AWS::S3::S3Object.url_for(orig_name, "audicle", authenticated: false)
     @recording = Recording.new(recording_params)
     @recording.audio_file = orig_name
+    @recording.top_recorder = false
     @recording.user_id = current_user.id
-    @recording.save
+    # @recording.top_recorder = false
+    # @recording.user_id = current_user.id
+    # if @recording.url == Recording.where(url:@recording.url).each {|r| r.url}
+    if Recording.where(url:fileUp[:url]).where(top_recorder:true).first
+      redirect_to :authenticated_root, notice: "Sorry, an Audicle has already been recorded for this article."
+    else
+      @recording.save!
+      redirect_to :authenticated_root, notice: "Audicle successfully saved!"
+    end
+    # if Recording.where(url:fileUp[:url])
+    # if Recording.where(fileUp)
     # respond_to do |format|
     #   format.html {redirect_to :authenticated_root}
     #   format.json {render action: 'new'}
     # end
-    redirect_to :authenticated_root
+
   end
   def index
     @recordings = Recording.all
@@ -32,11 +44,12 @@ class RecordingsController < ApplicationController
     @recordings = Recording.all
     @recording = Recording.find(params[:id])
     @same_recording_url = Recording.where(url:@recording.url).first
+    @top_recorder = Recording.where(url:@recording.url).where(top_recorder:true).first
+
     @same_recording_users = Recording.where(url:@recording.url)
+
     # @recording_article = @recording.article
     @amazon_recording = AWS::S3::Bucket.find('audicle')[@recording.title + '.mp3']
-
-
   end
   # def upload
   #   begin
@@ -64,7 +77,7 @@ class RecordingsController < ApplicationController
       just_filename.sub(/[^\w\.\-]/,'_')
   end
   def recording_params
-    params.require(:recording).permit(:topic_id, :description, :content, :provider_id, :url, :user_id, :article_id, :image, :mp3file, :audio_file, :title,:author)
+    params.require(:recording).permit(:topic_id, :description, :content, :provider_id, :url, :user_id, :article_id, :image, :mp3file, :audio_file, :title, :author, :top_recorder)
   end
   def get_all_topics
     @topics = Topic.all
@@ -72,5 +85,7 @@ class RecordingsController < ApplicationController
   def get_all_providers
     @providers = Provider.all
   end
+
+
 
 end

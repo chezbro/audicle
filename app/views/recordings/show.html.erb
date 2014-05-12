@@ -16,16 +16,67 @@
     </div>
 </div>
 <div style="float:right;top:40px" class="row-fluid col-xs-12 col-sm-8 col-md-10 col-lg-10">
-    <% @same_recording_users.each do |recording|  %>
-    <div style="display:inline-block;margin-right:0px;max-width:150px;" class="pin">
-        <h5 style="text-align:center"><%= link_to "#{recording.user.name[0,16]}", user_path(recording.user.id), style:"text-decoration:none" %></h5>
-        <% if recording.user.image_url.present? %>
-            <%= link_to image_tag("#{recording.user.image_url}"), user_path(recording.user.id) %>
+    <% if @top_recorder %>
+    <div style="margin:20px auto 0px auto;max-width:200px;" class="pin">
+        <h5 style="text-align:center"><%= link_to "#{@top_recorder.user.name[0,16]}", user_path(@top_recorder.user.id), style:"text-decoration:none" %></h5>
+        <% if @top_recorder.user.image_url.present? %>
+            <%= link_to image_tag("#{@top_recorder.user.image_url}"), user_path(@top_recorder.user.id) %>
         <% else %>
-            <%= link_to image_tag("https://s3.amazonaws.com/uifaces/faces/twitter/_everaldo/128.jpg"), user_path(recording.user.id) %>
+            <%= link_to image_tag("https://s3.amazonaws.com/uifaces/faces/twitter/_everaldo/128.jpg"), user_path(@top_recorder.user.id) %>
         <% end %>
-        <p style="font-size:10px;text-align:center"><%= link_to "#{recording.user.recordings.count} Audicles", user_path(recording.user.id) %> | <%= recording.user.followers.count %> Listeners </p><br>
+        <p style="font-size:10px;text-align:center"><%= link_to "#{@top_recorder.user.recordings.count} Audicles", user_path(@top_recorder.user.id) %> | <%= @top_recorder.user.followers.count %> Listeners </p><br>
     </div>
+<!-- start of comments -->
+<!--         <div style="text-align:center;">
+            <h1>Comments</h1>
+            <div class="row-fluid col-xs-12 col-sm-8 col-md-10 col-lg-10">
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+                </ul>
+            </div>
+        </div> -->
+<!-- end of comments -->
+<!-- start of other articles from user -->
+    <div style="text-align:center;margin-top:35px;">
+    <h1>Other Audicles from <%= link_to "#{@top_recorder.user.name}", user_path(@top_recorder.user.id) %></h1>
+        <% @top_recorder.user.recordings.each do |top_recording| %>
+            <ul style="list-style-type:none">
+                <li><%= link_to top_recording.title, recording_path(top_recording.id) %></li>
+            </ul>
+        <% end %>
+    </div>
+<!-- end of articles from user -->
+<!-- multiple users, no top_recorder (false) -->
+    <% else  %>
+        <% @same_recording_users.each do |recording|  %>
+        <div style="display:inline-block;margin-right:0px;max-width:150px;" class="pin">
+            <h5 style="text-align:center"><%= link_to "#{recording.user.name[0,16]}", user_path(recording.user.id), style:"text-decoration:none" %></h5>
+            <% if recording.user.image_url.present? %>
+                <%= link_to image_tag("#{recording.user.image_url}"), user_path(recording.user.id) %>
+            <% else %>
+                <%= link_to image_tag("https://s3.amazonaws.com/uifaces/faces/twitter/_everaldo/128.jpg"), user_path(recording.user.id) %>
+            <% end %>
+            <p style="font-size:10px;text-align:center"><%= link_to "#{recording.user.recordings.count} Audicles", user_path(recording.user.id) %> | <%= recording.user.followers.count %> Listeners </p><br>
+        </div>
+        <% end %>
     <% end %>
+<!-- end of else for if top_recorder -->
 </div>
 

@@ -3,7 +3,7 @@
     <% @topics.each do |topic| %>
       <div style="margin-bottom:20px; margin-right:10px; max-height:300px;" class="pin topic_pin">
         <ul class="topic_list">
-          <li><%= link_to "#{topic.name}", topic_path(topic.id) %></li>
+          <li class="show_topic_headline"><%= link_to "#{topic.name}", topic_path(topic.id) %></li>
           <h1 style="margin:0px auto;text-align:center;position:relative;bottom:25px;" class="round-button">+</h1>
           <hr>
           <p class="topic_count_and_followers"><%= link_to "#{topic.recordings.count} Audicles", topic_path(topic.id) %></p>

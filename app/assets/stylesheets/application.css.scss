@@ -28,8 +28,8 @@ body, html {
 }
 
 .both_images img{
-   background: cover;
-   background-size: 100% 100%;
+  background: cover;
+  background-size: 100% 100%;
 }
 input.sign_up_submit:hover{
   background-color:#428bca;
@@ -39,21 +39,22 @@ img.small_logo_image:hover{
   background: url("small_logo_hover.png");
 }
 .round-button {
-    display: block;
-    width: 60px;
-    height: 60px;
-    line-height: 40px;
-    border: 2px solid #f5f5f5;
-    border-radius: 50%;
-    color: #f5f5f5;
-    text-align: center;
-    text-decoration: none;
-    background: #d3d3d3;
-    box-shadow: 0 0 3px gray;
-    font-size: 70px;
-    font-weight: bold;
-    display: inline-block;
+  display: block;
+  width: 140px;
+  height: 20px;
+  line-height: 0px;
+  border: 2px solid #f5f5f5;
+  border-radius: 0%;
+  color: #f5f5f5;
+  text-align: center;
+  text-decoration: none;
+  background: #d3d3d3;
+  box-shadow: 0 0 3px gray;
+  font-size: 20px;
+  font-weight: 200;
+  display: inline-block;
 }
 .round-button:hover {
-    background: #a8a8a8;
+  background: #a8a8a8;
 }
+

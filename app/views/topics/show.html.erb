@@ -1,6 +1,9 @@
 <div style="float:right;top:40px;text-align:center;" class="row-fluid col-xs-12 col-sm-8 col-md-10 col-lg-10">
   <h1 class="show_topic_headline"><%= @topic.name %></h1>
-  <h1 class="round-button">+</h1>
+  <div id="follow_topic">
+    <%= render :partial => "topics/follow_topic", :locals => {:topic => @topic} %>
+  </div>
+<!--   <h1 class="round-button">+</h1> -->
   <hr>
   <div id="columns">
     <% @topic.recordings.each do |topic| %>
