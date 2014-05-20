@@ -13,9 +13,46 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require main
 //= require_tree .
+
 $(function(){
    $('h6').on('click',function(){
       $('.social').stop().slideToggle();
    });
 });
+//  $(function callback(stream) {
+//       var context = new webkitAudioContext();
+//       var mediaStreamSource = context.createMediaStreamSource(stream);
+//       });
+// $(function() {
+//   navigator.webkitGetUserMedia({audio:true}, callback);
+// });
+
+// function callback(stream) {
+//     window.AudioContext = window.AudioContext || window.webkitAudioContext;
+//     var context = new AudioContext();
+
+//     // Create an AudioNode from the stream.
+//     var mediaStreamSource = context.createMediaStreamSource( stream );
+//     rec = new Recorder(mediaStreamSource);
+//     // Connect it to the destination to hear yourself (or any other node for processing!)
+//     mediaStreamSource.connect( context.destination );
+// }
+
+// navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
+// navigator.getUserMedia( {audio:true}, callback );
+
+  // var ws = new WebSocket("ws://127.0.0.1:9999");
+  //              ws.onopen = function () {
+  //                  console.log("Openened connection to websocket");
+  //              };
+
+  //              ws.onmessage = function(e) {
+  //                  var jsonResponse = jQuery.parseJSON(e.data );
+  //                  console.log(jsonResponse);
+  //                  if (jsonResponse.hypotheses.length > 0) {
+  //                     var bestMatch = jsonResponse.hypotheses[0].utterance;
+  //                      $("#outputText").text(bestMatch);
+  //                  }
+  //              }

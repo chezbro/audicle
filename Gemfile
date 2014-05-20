@@ -77,4 +77,4 @@ gem 'validates_formatting_of'
 gem 'will_paginate'
 gem 'aws-s3', :require => 'aws/s3'
 gem 'acts_as_follower'
-
+gem 'cancan'

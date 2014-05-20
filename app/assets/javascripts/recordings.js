@@ -12,3 +12,24 @@ $(document).ready(function() {
         return false;
     });
 });
+// $('#record').click(function() {
+//                rec.record();
+//                ws.send("start");
+//                $("#message").text("Click export to stop recording and analyze the input");
+
+//                // export a wav every second, so we can send it using websockets
+//                intervalKey = setInterval(function() {
+//                    rec.exportWAV(function(blob) {
+//                        rec.clear();
+//                        ws.send(blob);
+//                    });
+//                }, 1000);
+//            });
+// $('#export').click(function() {
+//                // first send the stop command
+//                rec.stop();
+//                ws.send("stop");
+//                clearInterval(intervalKey);
+//                ws.send("analyze");
+//                $("#message").text("");
+//            });
