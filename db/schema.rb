@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140512175600) do
+ActiveRecord::Schema.define(version: 20140521154818) do
 
   create_table "articles", force: true do |t|
     t.text     "content"
@@ -69,7 +69,6 @@ ActiveRecord::Schema.define(version: 20140512175600) do
   create_table "recordings", force: true do |t|
     t.string  "description"
     t.text    "content"
-    t.string  "audio_file"
     t.integer "length"
     t.boolean "verified"
     t.string  "provider"
@@ -82,6 +81,7 @@ ActiveRecord::Schema.define(version: 20140512175600) do
     t.string  "title"
     t.string  "author"
     t.boolean "top_recorder", default: false
+    t.string  "audio"
   end
 
   create_table "relationships", force: true do |t|

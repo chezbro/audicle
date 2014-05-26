@@ -11,7 +11,7 @@
             <li><%= link_to "#{@same_recording_url.provider.name}", provider_path(@same_recording_url.provider.id) %></li><br>
         </ul>
             <% if @amazon_recording  %>
-                <p style="display: inherit; margin: 10px auto;"><%= audio_tag(download_url_for(@amazon_recording.key), controls:true) %></p>
+                <p style="display: inherit; margin: 10px auto;"><%=  %></p>
             <% end %>
     </div>
 </div>

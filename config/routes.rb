@@ -92,6 +92,6 @@ Audicle::Application.routes.draw do
   #     resources :products
   #   end
 
-  #->Prelang (user_login:devise/stylized_paths)
+
 
 end

@@ -1,5 +1,7 @@
 <div style="float:right;" class="row-fluid col-xs-12 col-sm-8 col-md-10 col-lg-10">
 <%= form_for @recording, class:"recording_new", :html => {:multipart => true} do |f| %>
+  <%= f.hidden_field :key %>
+
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
@@ -28,23 +30,24 @@
     <%= f.label :topic %><br />
     <%= f.collection_select(:topic_id, @topics, :id, :name, :include_blank => "Please select") %>
   </div>
+<!--   <div class="field">
+    <#%= f.label :audio %>
+    <#%= f.file_field :audio %>
+  </div> -->
   <div class="field">
-    <%= f.label :audio_file %>
-    <%= f.file_field :audio_file %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Submit" %>
-  </div>
+<%= s3_uploader_form post: recordings_url, as: "recording[audio_url]" do %>
+  <%= file_field_tag :file, multiple: true %>
 <% end %>
-<audio controls autoplay></audio>
-  <div id="controls">
-    <img id="record" src="/assets/mic128.png" onclick="toggleRecording(this);">
-    <a id="save" href="#"><img src="/assets/save.svg"></a>
+    <%= f.submit "Create Recording" %>
+  <% end %>
   </div>
 
-<!--     <input onclick="startRecording()" type="button" value="start recording" />
-    <input onclick="stopRecording()" type="button" value="stop recording and play" /> -->
-
+<script id="template-upload" type="text/x-tmpl">
+<div class="upload">
+  {%=o.name%}
+  <div class="progress"><div class="bar" style="width: 0%"></div></div>
+</div>
+</script>
 </div>
 
 
