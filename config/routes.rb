@@ -1,5 +1,8 @@
 Audicle::Application.routes.draw do
   get "landings/index"
+
+  get "/starred" => "users#starred", as:"starred"
+
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -13,9 +16,17 @@ Audicle::Application.routes.draw do
       root to: "landings#index", as: :unauthenticated_root
     end
   end
-  # root 'dashboards#index'
+
   resources :articles
-  resources :recordings
+
+  resources :recordings do
+    member do
+      put "like", to: "recordings#upvote"
+      put "dislike", to: "recordings#downvote"
+      post :vote_up
+    end
+  end
+
   post "recordings/upload", :as => 'upload'
   # get "recordings/delete", :as => 'delete'
 

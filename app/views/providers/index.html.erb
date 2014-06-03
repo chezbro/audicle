@@ -5,6 +5,10 @@
         <%= link_to image_tag("#{provider.image_url}"), provider_path(provider.id) %><br>
       <p style="font-size:12px;text-align:center"><%= provider.name %></p><br>
       <p style="font-size:10px;text-align:center"><%= provider.recordings.count %> Audicles | 120 Followers </p>
+      <p><%= link_to like_recording_path(provider.id), method: :put, remote:true do %>
+          <i class="fa fa-indent"></i>
+          <% end %>
+      </p>
       </div>
     <% end %>
   </div>

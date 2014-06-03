@@ -25,6 +25,7 @@
             <%= link_to image_tag("https://s3.amazonaws.com/uifaces/faces/twitter/_everaldo/128.jpg"), user_path(@top_recorder.user.id) %>
         <% end %>
         <p style="font-size:10px;text-align:center"><%= link_to "#{@top_recorder.user.recordings.count} Audicles", user_path(@top_recorder.user.id) %> | <%= @top_recorder.user.followers.count %> Listeners </p><br>
+        <p style="font-size: 80px; margin: 0 auto; position: relative;left: 60px;"><i class="fa fa-play"></i></p>
     </div>
 <!-- start of comments -->
 <!--         <div style="text-align:center;">
@@ -54,14 +55,14 @@
         </div> -->
 <!-- end of comments -->
 <!-- start of other articles from user -->
-    <div style="text-align:center;margin-top:35px;">
-    <h1>Other Audicles from <%= link_to "#{@top_recorder.user.name}", user_path(@top_recorder.user.id) %></h1>
-        <% @top_recorder.user.recordings.each do |top_recording| %>
+<!--     <div style="text-align:center;margin-top:35px;">
+    <h1>Other Audicles from <@%= link_to "#{@top_recorder.user.name}", user_path(@top_recorder.user.id) %></h1>
+        <@% @top_recorder.user.recordings.each do |top_recording| %>
             <ul style="list-style-type:none">
-                <li><%= link_to top_recording.title, recording_path(top_recording.id) %></li>
+                <li><@%= link_to top_recording.title, recording_path(top_recording.id) %></li>
             </ul>
-        <% end %>
-    </div>
+        <@% end %>
+    </div> -->
 <!-- end of articles from user -->
 <!-- multiple users, no top_recorder (false) -->
     <% else  %>

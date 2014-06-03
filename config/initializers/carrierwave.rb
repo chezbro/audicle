@@ -12,21 +12,13 @@ CarrierWave.configure do |config|
     :provider              => 'AWS',
     :aws_access_key_id     => ENV['AUDICLE_KEY'],
     :aws_secret_access_key => ENV['AUDICLE_SECRET'],
-    :region                => 'us-east-1'
+
   }
 
-  # For testing, upload files to local `tmp` folder.
-  if Rails.env.test? || Rails.env.cucumber?
-    config.storage = :file
-    config.enable_processing = false
-    config.root = "#{Rails.root}/tmp"
-  else
-    config.storage = :fog
-  end
 
   config.cache_dir = "#{Rails.root}/tmp/uploads"                  # To let CarrierWave work on heroku
 
   config.fog_directory    = 'audicle'
   # config.s3_access_policy = :public_read                          # Generate http:// urls. Defaults to :authenticated_read (https://)
-  config.asset_host        = "https://s3.amazonaws.com/audicle/"
+  # config.asset_host        = "https://s3.amazonaws.com/audicle"
 end

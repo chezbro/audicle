@@ -1,5 +1,6 @@
 class RecordingsController < ApplicationController
-  include AWS::S3
+
+
   before_filter :get_all_topics
   before_filter :get_all_providers
 
@@ -7,8 +8,6 @@ class RecordingsController < ApplicationController
   def new
     @uploader = Recording.new.audio
     @uploader.success_action_redirect = new_recording_url
-    @recording = Recording.new(key:params[:key])
-
     respond_to do |format|
       format.html
       format.js
@@ -20,7 +19,7 @@ class RecordingsController < ApplicationController
     # AWS::S3::S3Object.store(orig_name, audio_file.read, 'audicle', :access => :public_read)
     # url = AWS::S3::S3Object.url_for(orig_name, "audicle", authenticated: false)
     @recording = Recording.new(recording_params)
-    @recording.audio = params[:file]
+    @recording.audio = params[:key]
     # @recording.audio_file = orig_name
     @recording.top_recorder = false
     @recording.user_id = current_user.id
@@ -30,6 +29,7 @@ class RecordingsController < ApplicationController
 
     # if Recording.where(url:fileUp[:url]).where(top_recorder:true).first
     #   redirect_to :authenticated_root, notice: "Sorry, an Audicle has already been recorded for this article."
+
       @recording.save!
       redirect_to :authenticated_root, notice: "Audicle successfully saved!"
 
@@ -70,6 +70,30 @@ class RecordingsController < ApplicationController
   #       render :text => "Couldn't complete the upload"
   #   end
   # end
+
+  def upvote
+    @recording = Recording.find(params[:id])
+    if @recording.voted_by?(current_user)
+      current_user.unvote_for(@recording)
+      current_user.vote_for(@recording)
+      render partial: "votecount"
+    else
+      current_user.vote_for(@recording)
+      render partial: "votecount"
+    end
+  end
+
+  def downvote
+    @recording = Recording.find(params[:id])
+    if @recording.voted_by?(current_user)
+      current_user.unvote_for(@recording)
+      current_user.vote_against(@recording)
+      render partial: "votecount"
+    else
+      current_user.vote_against(@recording)
+      render partial: "votecount"
+    end
+  end
 
   def destroy
     if (params[:recording])

@@ -4,8 +4,8 @@
         <!--   <p class="tagline">Read To Others. Let Others Read To You</p> -->
           <ul class="account_links">
               <% if current_user %>
-                  <li><%= link_to "#" do %>
-                    <i class="fa fa-star"></i>
+                  <li><%= link_to starred_path do %>
+                    <i class="fa fa-indent"></i>
                     <% end %>
                   </li>
                   <li><%= link_to users_path do%>

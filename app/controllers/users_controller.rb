@@ -31,6 +31,10 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def starred
+    @starred_list = current_user.votes
+  end
+
   def update
     if @user.update_attributes(user_params)
       sign_in @user
