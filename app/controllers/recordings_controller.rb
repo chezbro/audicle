@@ -6,8 +6,8 @@ class RecordingsController < ApplicationController
 
 
   def new
-    @uploader = Recording.new.audio
-    @uploader.success_action_redirect = new_recording_url
+    @uploader = Recording.new
+    # @uploader.success_action_redirect = new_recording_url
     respond_to do |format|
       format.html
       format.js

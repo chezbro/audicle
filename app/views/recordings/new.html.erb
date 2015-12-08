@@ -1,5 +1,5 @@
 <div style="float:right;" class="row-fluid col-xs-12 col-sm-8 col-md-10 col-lg-10">
-<%= form_for @recording, class:"recording_new", :html => {:multipart => true} do |f| %>
+<%= form_for @uploader, class:"recording_new", :html => {:multipart => true} do |f| %>
   <%= f.hidden_field :key %>
 
   <div class="field">
@@ -36,12 +36,8 @@
     <#%= f.label :audio %>
     <#%= f.file_field :audio %>
   </div> -->
-  <div class="field">
-<%= direct_upload_form_for @uploader, :html => { :target => "_blank_iframe" } do |f| %>
-  <%= f.file_field :audio %>
-  <%= f.submit "Submit Audio" %>
-<% end %>
-  </div>
+  
+
 
 </div>
 

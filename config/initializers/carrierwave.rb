@@ -10,8 +10,8 @@ CarrierWave.configure do |config|
 
     # Configuration for Amazon S3
     :provider              => 'AWS',
-    :aws_access_key_id     => ENV['AUDICLE_KEY'],
-    :aws_secret_access_key => ENV['AUDICLE_SECRET'],
+    :aws_access_key_id     =>'AKIAIJSSOQC3EVJCO4UA',
+    :aws_secret_access_key =>'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',
 
   }
 

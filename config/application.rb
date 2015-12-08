@@ -9,8 +9,8 @@ Bundler.require(*Rails.groups)
 module Audicle
   class Application < Rails::Application
     AWS::S3::Base.establish_connection!(
-    :access_key_id     => ENV['AUDICLE_KEY'],
-    :secret_access_key => ENV['AUDICLE_SECRET']
+    :access_key_id     => 'AKIAIJSSOQC3EVJCO4UA',
+    :secret_access_key => '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'
     )
     BUCKET="audicle"
     # Settings in config/environments/* take precedence over those specified here.
