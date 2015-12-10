@@ -15,6 +15,7 @@
             <% end %>
     </div>
 </div>
+
 <div style="float:right;top:40px" class="row-fluid col-xs-12 col-sm-8 col-md-10 col-lg-10">
     <% if @top_recorder %>
     <div style="margin:20px auto 0px auto;max-width:200px;" class="pin">
@@ -27,6 +28,10 @@
         <p style="font-size:10px;text-align:center"><%= link_to "#{@top_recorder.user.recordings.count} Audicles", user_path(@top_recorder.user.id) %> | <%= @top_recorder.user.followers.count %> Listeners </p><br>
         <p style="font-size: 80px; margin: 0 auto; position: relative;left: 60px;"><i class="fa fa-play"></i></p>
     </div>
+
+
+
+
 <!-- start of comments -->
 <!--         <div style="text-align:center;">
             <h1>Comments</h1>

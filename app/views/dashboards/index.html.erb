@@ -1,5 +1,6 @@
 <%= render "layouts/sidebar" %>
         <div style="float:right;top:40px;" class="row-fluid col-xs-12 col-sm-8 col-md-10 col-lg-10">
+            <%= link_to "New Recording", new_recording_path %>
             <div id="columns">
                 <% @feed_items.each do |feed_item| %>
                     <div class="pin">
