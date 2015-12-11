@@ -2,6 +2,7 @@
         <div id="columns">
             <% @users.each do |user|  %>
                 <div class="pin">
+                    as
                     <h5 style="text-align:center"><%= user.email %></h5>
                     <% if user.image_url.present? %>
                         <%= link_to image_tag("#{user.image_url}"), user_path(user.id) %>
