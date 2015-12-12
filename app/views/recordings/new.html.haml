@@ -1,0 +1,38 @@
+.row-fluid.col-xs-12.col-sm-8.col-md-10.col-lg-10{:style => "float:right;"}
+  = form_for @uploader, class:"recording_new", :html => {:multipart => true} do |f|
+    = f.hidden_field :key
+    .field
+      = f.label :title
+      %br/
+      = f.text_field :title
+    .field
+      = f.label :author
+      %br/
+      = f.text_field :author
+    .field
+      = f.label :url
+      %br/
+      = f.text_field :url
+    .field
+      = f.label :image
+      %br/
+      = f.text_field :image
+    .field
+      = f.label :content
+      %br/
+      = f.text_area :content
+    .field
+      = f.label :provider
+      %br/
+      = f.collection_select(:provider_id, @providers, :id, :name, :include_blank => "Please select")
+    .field
+      = f.label :topic
+      %br/
+      = f.collection_select(:topic_id, @topics, :id, :name, :include_blank => "Please select")
+    = f.submit "Create Recording"
+  /
+    <div class="field">
+    <#%= f.label :audio %>
+    <#%= f.file_field :audio %>
+    </div>
+/ try w/o existing form, only upload mp3 form

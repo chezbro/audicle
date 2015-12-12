@@ -1,0 +1,31 @@
+!!!
+%html
+  %head
+    = typekit 'igp0tkb'
+    %title Audicle
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = favicon_link_tag 'favicon.ico'
+    = csrf_meta_tags
+    %link{:href => "http://fonts.googleapis.com/css?family=Raleway:400,100,300", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Oswald", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Lato:100,300,400", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css", :rel => "stylesheet"}/
+    = analytics_init if Rails.env.production?
+  %body
+    #page-container
+      - if current_page?(:unauthenticated_root) || current_page?(new_user_registration_path) || current_page?(new_user_session_path)
+        #flash
+          - flash.each do |name, msg|
+            = content_tag :div, msg, id: "flash_#{name}"
+        / <#%= render partial: "elements/navbar" %>
+        = yield
+      - else
+        = render "layouts/sidebar"
+        #flash
+          - flash.each do |name, msg|
+            = content_tag :div, msg, id: "flash_#{name}"
+        / <#%= render partial: "elements/navbar" %>
+        = yield
+    / above div closed sidebar
+    / above div closed page-container

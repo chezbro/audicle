@@ -1,0 +1,13 @@
+#provider_container
+  - @providers.each do |provider|
+    .pin.provider_pin
+      = link_to image_tag("#{provider.image_url}"), provider_path(provider.id)
+      %br/
+      %p{:style => "font-size:12px;text-align:center"}= provider.name
+      %br/
+      %p{:style => "font-size:10px;text-align:center"}
+        = provider.recordings.count
+        Audicles | 120 Followers
+      %p
+        = link_to like_recording_path(provider.id), method: :put, remote:true do
+          %i.fa.fa-indent

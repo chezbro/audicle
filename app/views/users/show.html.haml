@@ -1,0 +1,37 @@
+.row-fluid.col-xs-12.col-sm-8.col-md-10.col-lg-10{:style => "float:right;top:40px;text-align:center;"}
+  %h1.show_user_headline= @user.name
+  %h1.round-button +
+  %p.count_and_followers
+    = @user.recordings.count
+    Audicles | #{@user.followers.count} Listeners
+  %hr/
+  #columns
+    - @user.recordings.each do |user_recordings|
+      .pin.user_show_pin
+        %p{:style => "font-size:12px;text-align:center"}= link_to "#{user_recordings.title}", recording_path(user_recordings.id)
+        = link_to image_tag("#{user_recordings.image}"), "#"
+        %br/
+        %p{:style => "font-size:10px;display:inline-block;"}= user_recordings.author
+        %br/
+        %p{:style => "font-size:10px;display:inline-block;"}= link_to "Save +", "#"
+/ Stats
+/
+  <#% provide(:title, @user.email) %>
+  <div class="row">
+  <aside class="span4">
+  <section>
+  <h1>
+  <#%= @user.email %>
+  </h1>
+  <div>
+  <#%= image_tag "\#{@user.image_url}" %>
+  </div>
+  </section>
+  <section>
+  <#%= render 'users/stats' %>
+  </section>
+  </aside>
+  <div class="span8">
+  <#%= render 'users/follow_form' %>
+  </div>
+  </div>

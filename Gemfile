@@ -82,6 +82,8 @@ gem 'acts_as_follower'
 gem 'cancan'
 gem 'carrierwave'
 gem 'fog'
+gem "haml-rails"
 gem 'carrierwave_direct'
 gem 'sidekiq'
-
+gem 'byebug'
+gem 'typekit-rails'

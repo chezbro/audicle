@@ -1,0 +1,16 @@
+.row-fluid.col-xs-12.col-sm-8.col-md-10.col-lg-10{:style => "float:right;top:40px;text-align:center;"}
+  %h1.show_topic_headline= @topic.name
+  #follow_topic
+    = render :partial => "topics/follow_topic", :locals => {:topic => @topic}
+  / <h1 class="round-button">+</h1>
+  %hr/
+  #columns
+    - @topic.recordings.each do |topic|
+      .pin.topic_show_pin{:style => "margin:0 5px 0;"}
+        %h1= link_to "#{topic.title}", recording_path(topic.id)
+        = link_to image_tag("#{topic.image}"), recording_path(topic.id)
+        %br/
+        %p{:style => "font-size:12px;text-align:center"}= link_to "#{topic.provider.name}", provider_path(topic.provider.id)
+        %p{:style => "font-size:12px;text-align:center"}= topic.author
+        %br/
+        %p{:style => "font-size:10px;text-align:center"} 17 Audicles | 120 Followers

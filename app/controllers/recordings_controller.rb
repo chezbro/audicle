@@ -49,8 +49,6 @@ class RecordingsController < ApplicationController
     # @amazon_recordings = AWS::S3::Bucket.find('audicle')[params[@recording.audio_file]]
   end
   def show
-    @users = User.all
-    @recordings = Recording.all
     @recording = Recording.find(params[:id])
     @same_recording_url = Recording.where(url:@recording.url).first
     @top_recorder = Recording.where(url:@recording.url).where(top_recorder:true).first

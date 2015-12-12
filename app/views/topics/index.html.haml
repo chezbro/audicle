@@ -1,0 +1,9 @@
+.row-fluid.col-xs-12.col-sm-8.col-md-10.col-lg-10{:style => "top:150px;left:33%;display:inline-block"}
+  - @topics.each do |topic|
+    .pin
+      %ul
+        %li
+          = link_to "#{topic.name}", topic_path(topic.id)
+        %p.topic_count_and_followers= link_to "#{topic.recordings.count} Audicles", topic_path(topic.id)
+        %p.topic_count_and_followers 1118 Listeners
+      

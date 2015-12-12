@@ -1,6 +1,0 @@
-<% if current_user.following?(topic) %>
-    <%= button_to("Unfollow", topic_follow_path(topic.to_param, current_user.get_follow(topic).id),
-    :method => :delete, :remote => true, :class => 'round-button') %>
-<% else %>
-    <%= button_to("Follow", topic_follows_path(topic.to_param), :remote => true, :class => 'round-button-topic-follow') %>
-<% end %>

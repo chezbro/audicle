@@ -1,0 +1,36 @@
+.row-fluid.col-xs-12.col-sm-8.col-md-10.col-lg-10{:style => "float:right;"}
+  #columns
+    - @users.each do |user|
+      .pin
+        as
+        %h5{:style => "text-align:center"}= user.email
+        - if user.image_url.present?
+          = link_to image_tag("#{user.image_url}"), user_path(user.id)
+        - else
+          = link_to image_tag("https://s3.amazonaws.com/uifaces/faces/twitter/_everaldo/128.jpg")
+        %p{:style => "font-size:10px;text-align:center"}
+          = user.recordings.count
+          Audicles | #{user.followers.count} Listeners
+        %br/
+        - if user_signed_in? && current_user!=user
+          #follow_user
+            = render :partial => "follow_user", :locals => {:user => user}
+        %p{:style => "text-align:center"}
+/
+  <div class="row-fluid">
+  <div class="span6">1 half</div>
+  <div class="span6">2 half</div>
+  </div>
+/
+  <div id="follow_form">
+  <#% if current_user.following?(user) %>
+  <#%= form_for(current_user.relationships.find_by(followed_id: user.id), html: { method: :delete }, remote: true) do |f| %>
+  <#%= f.submit "Unfollow", style:"width:120px;", class: "btn btn-default" %>
+  <#% end %>
+  <#% else %>
+  <#%= form_for(current_user.relationships.build(followed_id: user.id), remote: true) do |f| %>
+  <#%= f.hidden_field :followed_id %>
+  <#%= f.submit "Follow", style:"width:120px;", class: "btn btn-default btn-primary" %>
+  <#% end %>
+  <#% end %>
+  </div>

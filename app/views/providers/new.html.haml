@@ -1,0 +1,20 @@
+.row-fluid.col-xs-12.col-sm-8.col-md-10.col-lg-10{:style => "float:right;"}
+  = form_for @provider, class:"provider_new" do |f|
+    .field
+      = f.label :name
+      %br/
+      = f.text_field :name
+    .field
+      = f.label :description
+      %br/
+      = f.text_field :description
+    .field
+      = f.label :url
+      %br/
+      = f.text_field :url
+    .field
+      = f.label :image_url
+      %br/
+      = f.text_field :image_url
+    .actions
+      = f.submit "Submit"

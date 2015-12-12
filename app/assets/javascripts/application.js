@@ -13,7 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+
 //= require main
+//= require typekit
 //= require_tree .
 
 $(function(){

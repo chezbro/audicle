@@ -1,0 +1,29 @@
+.col-xs-12.col-sm-12.col-md-12.col-lg-12{:style => "margin:0;padding:0;"}
+  .sidebar.col-xs-12.col-sm-4.col-md-2.col-lg-2{:style => "text-align:center;padding:0;position:fixed;"}
+    %h1.audicle_dashboard_heading
+      = link_to "AUDICLE", :authenticated_root
+    / <p class="tagline">Read To Others. Let Others Read To You</p>
+    %ul.account_links
+      - if current_user
+        %li
+          = link_to starred_path do
+            %i.fa.fa-indent
+        %li
+          = link_to users_path do
+            %i.fa.fa-users
+        %li{:style => "margin-right:0px"}
+          = link_to "#" do
+            %i.fa.fa-gear
+      - else
+        %li= link_to "Sign Up", "#"
+        %li= link_to "Sign In", "#"
+    %ul.nav_links
+      %li= link_to "Audicles", recordings_path, class:"user_nav_link"
+      %li= link_to "Providers", providers_path, class:"provider_nav_link"
+      %li= link_to "Categories", topics_path, class:"topics_nav_link"
+    %ul.bottom_nav
+      - if current_user
+        %li= link_to "Everywhere", providers_path
+        %li= link_to "About", topics_path
+        %li= link_to "Sign Out", destroy_user_session_path, method:"delete"
+  / left open div for content on other pages

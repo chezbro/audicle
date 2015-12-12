@@ -1,0 +1,7 @@
+.votes
+  %h3
+    = link_to like_recording_path(@recording.id), method: :put do
+      %i.fa.fa-sort-up.vote_up
+  %h2
+    = link_to dislike_recording_path(@recording.id), method: :put do
+      %i.fa.fa-sort-down.vote_down
