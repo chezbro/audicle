@@ -1,2 +1,7 @@
 #recording_container
-  = @recording.inspect
+  %h1
+    = @recording.title
+  %div.text-center
+    = image_tag @recording.image
+  %div.text-center
+    = audio_tag("#", autoplay: true, controls: true)
