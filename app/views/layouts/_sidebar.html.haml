@@ -12,8 +12,8 @@
           = link_to users_path do
             %i.fa.fa-users
         %li{:style => "margin-right:0px"}
-          = link_to "#" do
-            %i.fa.fa-gear
+          = link_to new_recording_path do
+            %i.fa.fa-microphone
       - else
         %li= link_to "Sign Up", "#"
         %li= link_to "Sign In", "#"
